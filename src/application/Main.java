@@ -1,8 +1,8 @@
 package application;
 
 import javafx.application.*;
+import javafx.fxml.*;
 import javafx.scene.*;
-import javafx.scene.layout.*;
 import javafx.stage.*;
 
 
@@ -10,10 +10,9 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) {
         try {
-            BorderPane root = new BorderPane();
+            Parent root = FXMLLoader.load(getClass().getResource("Demo.fxml"));
             Scene scene = new Scene(root, 400, 400);
             scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-            // Parent root = FXMLLoader.load(getClass().getResource("Demo.fxml"));
             primaryStage.setScene(scene);
             primaryStage.setTitle("Hello World");
             primaryStage.show();
@@ -24,8 +23,5 @@ public class Main extends Application {
 
     public static void main(String[] args) {
         launch(args);
-        // Parent root = FXMLLoader.load(getClass().getResource("Demo.fxml"));
     }
-
-
 }
